@@ -7,7 +7,7 @@ class Navbar extends Component {
         return (
             <div className='navbar'>
                 {
-                    this.props.headerLinks.map((link, index) => {
+                    this.props.navbarLinks.map((link, index) => {
                        return (
                         <a className={`navbar__link ${link.active ? 'green-text' : ''}`} key={index} onClick={() => console.log('trying to switch tab')}>
                         {link.title}
@@ -21,9 +21,9 @@ class Navbar extends Component {
 }
 
 function mapStateToProps(state) {
-    const { headerLinks } = state.headerNavbar;
+    const { navbarLinks } = state.headerNavbar;
     return {
-        headerLinks
+        navbarLinks
     }
 }
 
