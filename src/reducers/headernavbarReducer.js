@@ -3,21 +3,23 @@ import {
     SET_NAVBAR_LINKS
 } from '../actions/types';
 
-const INITIAL_STATE ={
+const INITIAL_STATE = {
     headerLinks: [
-            {
-                title: 'yooo'
-            },
-            {
-                title: 'YOOO'
-            }
+        {
+            title: 'yooo'
+        },
+        {
+            title: 'YOOO'
+        }
     ],
     navbarLinks: [
         {
-            title: 'account'
+            title: 'account',
+            active: true
         },
         {
-            title: 'purchases'
+            title: 'purchases',
+            active: false
         }
     ]
 }
