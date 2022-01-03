@@ -9,25 +9,38 @@ class Account extends Component {
 
     componentDidMount() {
 
-        const navbarLinks =[
+        const headerLinks = [
+            {
+                _id: 0,
+                title: 'Shop',
+                path: '/shop'
+            },
+            {
+                _id: 1,
+                title: 'Logout',
+                path: '/'
+            }
+        ]
+
+        const navbarLinks = [
             {
                 _id: 0,
                 title: 'Purchase History',
-                active: false,
+                active: true,
                 component: <PurchaseHistory/>
             },
             {
                 _id: 1,
                 title: 'Account Information',
-                active: true,
+                active: false,
                 component: <AccountInformation/>
-            },
+            }
         ]
 
-        this.props.setHeaderLinks([]);
+        this.props.setHeaderLinks(headerLinks);
         this.props.setNavbarLinks(navbarLinks);
     }
-
+    
     renderContent() {
         let jsx;
         if(this.props.navbarLinks) {
