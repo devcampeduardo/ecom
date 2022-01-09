@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import ShopProduct from "./shopProduct";
 import ShopSearchBar from "./shopSearchBar";
+import ShopCart from "./shopCart";
 
 class Shop extends Component {
 
@@ -34,21 +35,24 @@ class Shop extends Component {
     }
   
     render() {
-        
+         return <ShopCart className='shop__cart'/>
         return (
-            <div className="shop">
-                <ShopSearchBar onSubmit={this.onSubmit} className='shop__search-bar' />
-                <div className="shop__products">
+            <div className='shop'>
+                <ShopSearchBar onSubmit={this.onSubmit} className='shop__search-bar'/>
+                <div className='shop__products'>
                     {
                         this.props.filteredProducts.map(product => {
                             return (
-                                    <ShopProduct {...product} key={product._id} />
+                                <ShopProduct {...product} key={product._id} />
                             )
                         })
                     }
                 </div>
-                {/* shop product */}
-                {/* shop cart button */}
+                
+                    this.state.shopCart ? <ShopCart className='shop__cart'/> : ''
+                
+                
+               {/*<CartButton onClick={this.handleAddToCart} className='shop__cart-button' icon='fas fa-cart-plus'/>*/}
             </div>
         )
     }
@@ -59,7 +63,7 @@ function mapStateToProps(state) {
     return {
         categories,
         filteredProducts
-    }
+    } 
 }
 
 Shop = connect(mapStateToProps, actions)(Shop);
