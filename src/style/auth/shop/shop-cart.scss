@@ -20,9 +20,9 @@
 }
 
 .shop-cart {
-    &__toggle {
+    //&__toggle {
        
-    }
+    //}
     &__content {
         height: 500px;
         width: 520px;
@@ -53,5 +53,36 @@
     }
     &__footer {
         display: grid;
+    }
+}
+
+.cart-footer {
+    &__checkout {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    height: 38px;
+    width: 183px;
+    border-radius: 20px;
+    background-color: #00CB79;
+
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    transition: all .3s ease;
+
+        &:hover {
+            transform: scale(0.97);
+        }
+
+        &:active {
+            transform: scale(0.200);
+        }
+
+        &:focus {
+            outline: none;
+        }
     }
 }
