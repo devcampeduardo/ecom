@@ -4,7 +4,9 @@ import Quantity from "./quantity";
 
 class CartProduct extends Component {
     render() {
-        const { className, title, quantity, price } = this.props;
+        console.log(this.props);
+        const { className, product, quantity } = this.props;
+        const { title, price } = product;
         return (
             <div className={`${className} cart-product`}>
                 <img className="cart-product__image" src='http://via.placeholder.com/130x130'/>
