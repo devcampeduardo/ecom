@@ -35,7 +35,7 @@ class Shop extends Component {
     }
   
     render() {
-         return <ShopCart className='shop__cart'/>
+        //return <ShopCart className='shop__cart'/>
         return (
             <div className='shop'>
                 <ShopSearchBar onSubmit={this.onSubmit} className='shop__search-bar'/>
@@ -48,9 +48,9 @@ class Shop extends Component {
                         })
                     }
                 </div>
-                
+               
                     this.state.shopCart ? <ShopCart className='shop__cart'/> : ''
-                
+               
                 
                {/*<CartButton onClick={this.handleAddToCart} className='shop__cart-button' icon='fas fa-cart-plus'/>*/}
             </div>
