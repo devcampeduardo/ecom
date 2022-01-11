@@ -9,6 +9,12 @@ import ShopCart from "./shopCart";
 import CartButton from "./cartButton";
 
 class Shop extends Component {
+    constructor() {
+        super()
+        this.state={
+            showCart:true
+        }
+    }
 
     componentDidMount() {
         
@@ -58,9 +64,9 @@ class Shop extends Component {
                         })
                     }
                 </div>
-                
-                    this.state.shopCart ? <ShopCart className='shop__cart'/> : ''
-        
+                    {
+                    this.state.showCart ? <ShopCart className='shop__cart'/> : ''
+                    }
                <CartButton onClick={this.handleAddToCart} className='shop__cart-button' icon='fas fa-cart-plus'/>
             </div>
         )
